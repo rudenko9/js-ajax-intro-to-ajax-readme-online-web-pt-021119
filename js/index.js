@@ -1,13 +1,11 @@
-// your code here
 function getRepositories() {
-  const req = new XMLHttpRequest();
-  req.open('GET', 'https://api.github.com/users/octocat/repos');
-  req.send();
-<<<<<<< HEAD
+  const req = new XMLHttpRequest()
+  req.addEventListener("load", showRepositories);
+  req.open("GET", 'https://api.github.com/users/octocat/repos')
+  req.send()
 }
 
 function showRepositories() {
-  //this is set to the XMLHttpRequest object that fired the event
  var repos = JSON.parse(this.responseText);
   console.log(repos);
   const repoList = `<ul>${repos
@@ -44,6 +42,4 @@ function showCommits() {
     )
     .join('')}</ul>`;
   document.getElementById('commits').innerHTML = commitsList;
-=======
->>>>>>> 632ad51d1c4322d5ba5ada21218461fe4820e6c5
 }
